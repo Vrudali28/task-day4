@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverse(a , li , ri){
+         while(li < ri){
+              let temp = a[li];
+              a[li]= a[ri];
+              a[ri] = temp;
+              
+              li++;
+              ri--;
+            }
+        }
+       
+        (function(a , k){
+                                  k = k % a.length;
+                                    if(k < 0){
+                                      k += a.length;
+                                    }
+        
+                                    reverse(a, 0, a.length - k - 1);
+                                    reverse(a, a.length - k, a.length - 1);
+                                    reverse(a, 0, a.length - 1);
+                                    console.log(a);
+                                  })([1,2,3,4],3)
+                            
+        
+            </script>
+</body>
+</html>
